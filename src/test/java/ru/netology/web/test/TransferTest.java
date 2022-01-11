@@ -66,18 +66,18 @@ public class TransferTest {
         transferPage.transferMoney(DataHelper.CardName.getFirstCard(), DataHelper.CardName.getSecondCard(),total);
     }
         //Negative test
-//    @Test
-//    void tranferOverMaxValue() throws Exception {
-//        open("http://localhost:9999");
-//        var loginPage = new LoginPage();
-//        var authInfo = DataHelper.getAuthInfo();
-//        var verificationPage = loginPage.validLogin(authInfo);
-//        var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
-//        verificationPage.validVerify(verificationCode);
-//        TransferPage transferPage = new TransferPage();
-//        var total = dashboardPage.getCardBalance(DataHelper.CardName.getSecondCard());
-//        transferPage.transferMoney(DataHelper.CardName.getFirstCard(), DataHelper.CardName.getSecondCard(),total + 1);
-//        System.out.println("ok");
-//    }
+    @Test
+    void tranferOverMaxValue() throws Exception {
+        open("http://localhost:9999");
+        var loginPage = new LoginPage();
+        var authInfo = DataHelper.getAuthInfo();
+        var verificationPage = loginPage.validLogin(authInfo);
+        var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
+        verificationPage.validVerify(verificationCode);
+        TransferPage transferPage = new TransferPage();
+        var total = dashboardPage.getCardBalance(DataHelper.CardName.getSecondCard());
+        transferPage.transferMoney(DataHelper.CardName.getFirstCard(), DataHelper.CardName.getSecondCard(),total + 1);
+        System.out.println("ok");
+    }
 
 }
